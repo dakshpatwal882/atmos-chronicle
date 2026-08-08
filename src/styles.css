@@ -342,3 +342,13 @@
     transform: none !important;
   }
 }
+
+/* ---------- cinematic plate typography ---------- */
+/* Hero text sits on photography, so it carries its own film-print palette
+   instead of the page theme. Overriding --muted-foreground cascades into
+   every .label-mono inside the hero. */
+@utility cinematic {
+  color: oklch(0.965 0.018 88);
+  --muted-foreground: oklch(0.86 0.03 84 / 0.82);
+  text-shadow: 0 1px 30px oklch(0.2 0.02 60 / 0.55);
+}
