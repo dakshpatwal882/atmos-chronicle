@@ -130,6 +130,15 @@ export function Hero({ location, current, condition, unit, onSelectLocation, tim
             mixBlendMode: "screen",
           }}
         />
+        {/* legibility scrim so the plate never fights the type */}
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, oklch(0.2 0.02 60 / 0.5) 0%, transparent 26%, transparent 48%, oklch(0.18 0.02 60 / 0.62) 92%)",
+          }}
+        />
         {/* depth vignette, deepens over the horizon */}
         <div
           aria-hidden
@@ -150,7 +159,7 @@ export function Hero({ location, current, condition, unit, onSelectLocation, tim
         <div onMouseEnter={() => setRegion("horizon")} onMouseLeave={() => setRegion(null)} />
       </div>
 
-      <div className="pointer-events-none relative z-10 mx-auto flex min-h-[100svh] max-w-[1400px] flex-col justify-between px-5 pt-28 pb-10 md:px-10 md:pt-32">
+      <div className="cinematic pointer-events-none relative z-10 mx-auto flex min-h-[100svh] max-w-[1400px] flex-col justify-between px-5 pt-28 pb-10 md:px-10 md:pt-32">
         <div className="pointer-events-auto flex flex-wrap items-start justify-between gap-6">
           <div style={layer(-0.14)} className="min-w-0">
             <p className="label-mono">Station · {location.timezone} · obs {current.observedAt}</p>
