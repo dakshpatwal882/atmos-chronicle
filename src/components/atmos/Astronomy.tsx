@@ -14,7 +14,8 @@ export function Astronomy({ sun, moon, progress }: Props) {
   const isDay = progress > 0.08 && progress < 0.92;
 
   // moon terminator: offset a shadow disc by phase
-  const shift = (moon.phase - 0.5) * 2; // -1 … 1
+  // shadow disc slides fully off the disc at full moon, covers it at new moon
+  const shift = (moon.phase < 0.5 ? -1 : 1) * (moon.illumination / 100) * 1.06;
 
   return (
     <div className="grid gap-px md:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
