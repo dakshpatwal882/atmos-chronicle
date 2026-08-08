@@ -30,7 +30,7 @@ export function Nav({ unit, onUnit, night, onNight }: Props) {
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-700 ${
         scrolled
           ? "border-b border-[var(--glass-line)] bg-[var(--glass)] backdrop-blur-xl"
-          : "border-b border-transparent"
+          : "cinematic border-b border-transparent"
       }`}
     >
       <nav className="mx-auto grid max-w-[1400px] grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 md:grid-cols-3 md:px-10">
